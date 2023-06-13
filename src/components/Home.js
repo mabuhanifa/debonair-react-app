@@ -1,7 +1,11 @@
-import React from 'react'
+import { Tab, Tabs } from "@mui/material";
+import React from "react";
 
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <Tabs>
+      <Tab label="User" href="users"/>
+      <Tab label="Employees" to="/employees" />
+    </Tabs>
+  );
 }
