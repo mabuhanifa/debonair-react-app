@@ -7,13 +7,14 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography
+  Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import Modal from "../components/Modal";
 
 export default function Employees() {
   const [employees, setEmployees] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [view, setView] = useState(false);
 
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -25,11 +26,10 @@ export default function Employees() {
     };
     fetchEmployees();
   }, []);
-  console.log(employees);
   return (
     <div>
       <Typography
-        variant="h2"
+        variant="h4"
         component="h2"
         sx={{
           marginBottom: "25px",
@@ -38,7 +38,6 @@ export default function Employees() {
       >
         Employee List
       </Typography>
-
       <div
         style={{
           display: "flex",
@@ -52,12 +51,12 @@ export default function Employees() {
             marginBottom: "25px",
             textAlign: "center",
           }}
-          onClick={() => setOpen(true)}
+          onClick={() => setView(true)}
         >
           Add User
         </Button>
       </div>
-
+      <Modal open={view} setView={setView} />
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
