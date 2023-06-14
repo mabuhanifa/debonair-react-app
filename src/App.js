@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Users from "./components/Users";
 
 function App() {
-  const [value, setValue] = useState("1")
+  const [value, setValue] = useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -23,7 +23,7 @@ function App() {
               <Tab label="Item Two" value="2" />
             </TabList>
           </Box>
-          <TabPanel value="1" >
+          <TabPanel value="1">
             <Users />
           </TabPanel>
           <TabPanel value="2">

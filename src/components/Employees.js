@@ -7,11 +7,14 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 export default function Employees() {
   const [employees, setEmployees] = useState([]);
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
     const fetchEmployees = async () => {
       const res = await fetch(
@@ -25,6 +28,36 @@ export default function Employees() {
   console.log(employees);
   return (
     <div>
+      <Typography
+        variant="h2"
+        component="h2"
+        sx={{
+          marginBottom: "25px",
+          textAlign: "center",
+        }}
+      >
+        Employee List
+      </Typography>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            marginBottom: "25px",
+            textAlign: "center",
+          }}
+          onClick={() => setOpen(true)}
+        >
+          Add User
+        </Button>
+      </div>
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
