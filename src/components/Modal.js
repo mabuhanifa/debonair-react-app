@@ -28,7 +28,7 @@ export default function Mod({ open, setView }) {
             height: "100%",
           }}
         >
-          <Paper style={{ padding: "2rem", maxWidth: "800px" }}>
+          <Paper sx={{ padding: "2rem", width: "600px" }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Add User
             </Typography>
@@ -38,7 +38,7 @@ export default function Mod({ open, setView }) {
               onSubmit={handleSubmit}
             >
               <Form>
-                <div style={{ marginBottom: "1rem" }}>
+                <div style={{ marginBottom: "25px" }}>
                   <Field
                     name="firstName"
                     label="First Name"
@@ -51,7 +51,7 @@ export default function Mod({ open, setView }) {
                     style={{ color: "red" }}
                   />
                 </div>
-                <div style={{ marginBottom: "1rem" }}>
+                <div style={{ marginBottom: "25px" }}>
                   <Field
                     name="lastName"
                     label="Last Name"
@@ -64,7 +64,7 @@ export default function Mod({ open, setView }) {
                     style={{ color: "red" }}
                   />
                 </div>
-                <div style={{ marginBottom: "1rem" }}>
+                <div style={{ marginBottom: "25px" }}>
                   <Field
                     name="employeeType"
                     label="Employee Type"
