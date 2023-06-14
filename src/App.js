@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Users from "./components/Users";
 
 function App() {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState("1")
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
