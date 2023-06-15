@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function User() {
   const [users, setUsers] = useState([]);
@@ -19,7 +19,7 @@ export default function User() {
   const { id } = useParams();
   const user = users.find((user) => user.empID === Number(id));
   return (
-    <div style={{ textAlign: "center" ,margin:"20px"}}>
+    <div style={{ textAlign: "center", margin: "20px" }}>
       <Typography variant="h5" component="h2" gutterBottom>
         User Details
       </Typography>
@@ -27,6 +27,11 @@ export default function User() {
       <Typography>First Name: {user?.firstName}</Typography>
       <Typography>Last Name: {user?.lastName}</Typography>
       <Typography>Employee Type: {user?.employeeType}</Typography>
+      <Link to={`/users/edit/${user?.empID}`}>
+        <Button variant="contained" color="primary">
+          Update
+        </Button>
+      </Link>
     </div>
   );
 }
