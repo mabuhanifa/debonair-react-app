@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import UserModal from "./Modals/UserModal";
 
 export default function Users() {
@@ -77,7 +78,12 @@ export default function Users() {
                 <TableCell>{user.lastName}</TableCell>
                 <TableCell>{user.employeeType}</TableCell>
                 <TableCell>
-                  <Button variant="contained">Details</Button>
+                  <Link
+                    to={`/users/${user.empID}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button variant="contained">Details</Button>
+                  </Link>
                 </TableCell>
               </TableRow>
             ))}

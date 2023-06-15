@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import EmployeeModal from "./Modals/EmployeeModal";
 
 export default function Employees() {
@@ -76,7 +77,12 @@ export default function Employees() {
                 <TableCell>{employee.lastName}</TableCell>
                 <TableCell>{employee.employeeType}</TableCell>
                 <TableCell>
-                  <Button variant="contained">Details</Button>
+                <Link
+                    to={`/employees/${employee.empID}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button variant="contained">Details</Button>
+                  </Link>
                 </TableCell>
               </TableRow>
             ))}
