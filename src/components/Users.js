@@ -15,7 +15,6 @@ import UserModal from "./Modals/UserModal";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
-  console.log(users);
   const [view, setView] = useState(false);
 
   useEffect(() => {
