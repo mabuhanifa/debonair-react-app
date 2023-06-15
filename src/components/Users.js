@@ -7,11 +7,14 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import UserModal from "./Modals/UserModal";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  const [view, setView] = useState(false);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -26,6 +29,35 @@ export default function Users() {
   }, []);
   return (
     <div>
+      <Typography
+        variant="h4"
+        component="h2"
+        sx={{
+          marginBottom: "25px",
+          textAlign: "center",
+        }}
+      >
+        Employee List
+      </Typography>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            marginBottom: "25px",
+            textAlign: "center",
+          }}
+          onClick={() => setView(true)}
+        >
+          Add User
+        </Button>
+      </div>
+      <UserModal view={view} setView={setView} />
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
