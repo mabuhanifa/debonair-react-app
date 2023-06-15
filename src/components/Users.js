@@ -15,6 +15,7 @@ import UserModal from "./Modals/UserModal";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  console.log(users);
   const [view, setView] = useState(false);
 
   useEffect(() => {
@@ -71,7 +72,7 @@ export default function Users() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((user) => (
+            {users.filter((user) => user.employeeType === "Admin").map((user) => (
               <TableRow key={user.empID}>
                 <TableCell>{user.empID}</TableCell>
                 <TableCell>{user.firstName}</TableCell>
