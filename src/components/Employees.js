@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import Modal from "../components/Modal";
+import EmployeeModal from "./Modals/EmployeeModal";
 
 export default function Employees() {
   const [employees, setEmployees] = useState([]);
@@ -56,7 +56,7 @@ export default function Employees() {
           Add User
         </Button>
       </div>
-      <Modal open={view} setView={setView} />
+      <EmployeeModal open={view} setView={setView} />
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
