@@ -16,7 +16,21 @@ const initialValues = {
 };
 
 export default function Mod({ open, setView }) {
-  const handleSubmit = (values) => {};
+  const handleSubmit = async (values) => {
+    const res = await fetch(
+      "http://59.152.62.177:8085/api/SaveEmployeeInformation",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Access-Control-Allow-Origin":
+            "http://59.152.62.177:8085/api/SaveEmployeeInformation",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      }
+    );
+  };
   return (
     <>
       <Modal open={open} onClose={() => setView((m) => !m)}>

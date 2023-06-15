@@ -30,8 +30,6 @@ export default function UserModal({ view, setView }) {
         body: JSON.stringify(values),
       }
     );
-
-    console.log(await res,values);
   };
   return (
     <>
