@@ -3,8 +3,10 @@ import TabList from "@mui/lab/TabList";
 import { Box, Tab } from "@mui/material";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import Employee from "./components/Employee";
 import Employees from "./components/Employees";
 import Home from "./components/Home";
+import User from "./components/User";
 import Users from "./components/Users";
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users />} />
         <Route path="/employees" element={<Employees />} />
+        <Route path="/users/:id" element={<User />} />
+        <Route path="/employees/:id" element={<Employee />} />
       </Routes>
     </>
   );

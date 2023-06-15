@@ -1,4 +1,3 @@
-
 import { Button, Modal, Paper, TextField, Typography } from "@mui/material";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -17,7 +16,19 @@ const initialValues = {
 };
 
 export default function UserModal({ view, setView }) {
-    const handleSubmit =()=>{}
+  const handleSubmit = async(values) => {
+    const res = await fetch("http://59.152.62.177:8085/api/SaveEmployeeInformation", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+   
+
+    console.log(await res);
+
+  };
   return (
     <>
       <Modal open={view} onClose={() => setView((m) => !m)}>
@@ -29,7 +40,7 @@ export default function UserModal({ view, setView }) {
             height: "100%",
           }}
         >
-          <Paper style={{ padding: "2rem", maxWidth: "400px" }}>
+          <Paper sx={{ padding: "2rem", width: "600px" }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Add User
             </Typography>

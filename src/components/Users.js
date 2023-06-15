@@ -37,7 +37,7 @@ export default function Users() {
           textAlign: "center",
         }}
       >
-        Employee List
+        User List
       </Typography>
       <div
         style={{
